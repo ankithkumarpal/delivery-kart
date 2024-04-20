@@ -1,0 +1,29 @@
+
+<div *ngFor="let item of totalItems ; let i = index">
+  <div class="items">
+    <div class="name items-column">
+      <p>Name</p>
+      <input type="text" placeholder="Name" pInputText [(ngModel)]="item.name" (ngModelChange)="onInputchange(i, 'name', item.name)" />
+    </div>
+    <div class="weight items-column">
+      <p>Weight</p>
+      <input type="number" placeholder="Weight" pInputText [(ngModel)]="item.weight"  (ngModelChange)="onInputchange(i, 'weight', item.weight)" />
+    </div>
+    <div class="quantity items-column">
+      <p>Quantity</p>
+      <input type="number" placeholder="Quantity" pInputText [(ngModel)]="item.quantity" (ngModelChange)="onInputchange(i, 'quantity', item.quantity)" />
+    </div>
+    <div class="quantity items-column">
+      <p>Total</p>
+      <input type="number" placeholder="Total" pInputText [(ngModel)]="item.total" (ngModelChange)="onInputchange(i, 'total', item.total)"/>
+    </div>
+    <div class="quantity items-column">
+      <p>Total Amount</p>
+      <input type="number" placeholder="Total Amount" pInputText [(ngModel)]="item.totalAmount" (ngModelChange)="onInputchange(i, 'totalAmount', item.totalAmount)" />
+    </div>
+    <i class="pi pi-minus items-column" style="color: rgb(5, 92, 255)" (click)="removeItem(i)"></i>
+    <ng-container *ngIf="i == totalItems.length-1">
+      <i class="pi pi-plus" style="color: rgb(5, 92, 255)" (click)="addItem()"></i>
+    </ng-container>
+  </div>
+</div>

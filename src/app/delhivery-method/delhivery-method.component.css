@@ -1,0 +1,10 @@
+.upx-method{
+  margin-top: 1rem;
+  padding : 2rem;
+  border: 2px solid rgb(219, 218, 218);
+  border-radius: 12px;
+}
+
+.selected-item{
+  margin-top: 2rem;
+}

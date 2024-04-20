@@ -1,0 +1,7 @@
+<div class="upx-method">
+    <p-dropdown [(ngModel)]="totalDeliveries[index].itemType" [options]="UPXMethods" optionLabel="name" placeholder="Select Delivery Item"></p-dropdown>
+    <div class="selected-item" *ngIf="totalDeliveries[index].itemType !== ''">
+         <p>{{totalDeliveries[index].itemType.name}}</p>
+         <app-items [methodIndex]="index" ></app-items>
+    </div>
+</div>
