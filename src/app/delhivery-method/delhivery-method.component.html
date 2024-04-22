@@ -1,11 +1,9 @@
 
   <div class="upx-method">
-      <p-dropdown [(ngModel)]="delhiveryItem" [options]="delhiveryMethods" optionLabel="name" placeholder="Select Delivery Item"></p-dropdown>
+      <p-dropdown [(ngModel)]="totalDeliveries[index].itemType" [options]="delhiveryMethods" optionLabel="name" placeholder="Select Delivery Item"></p-dropdown>
 
-      <div class="selected-item" *ngIf="delhiveryItem!== undefined">
-           <p>{{delhiveryItem.name}}</p>
-           <i class="pi pi-plus" style="color: slateblue"></i>
-           <p style="display: inline; margin-left: 1rem; margin-right: 1rem;">0</p>
-           <i class="pi pi-minus" style="color: slateblue"></i>
+      <div class="selected-item" *ngIf="totalDeliveries[index].itemType !== ''">
+        <p>{{totalDeliveries[index].itemType.name}}</p>
+        <app-items [methodIndex]="index" ></app-items>
       </div>
   </div>

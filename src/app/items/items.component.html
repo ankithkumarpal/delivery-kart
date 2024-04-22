@@ -21,7 +21,9 @@
       <p>Total Amount</p>
       <input type="number" placeholder="Total Amount" pInputText [(ngModel)]="item.totalAmount" (ngModelChange)="onInputchange(i, 'totalAmount', item.totalAmount)" />
     </div>
-    <i class="pi pi-minus items-column" style="color: rgb(5, 92, 255)" (click)="removeItem(i)"></i>
+    <ng-container *ngIf="totalItems.length != 1">
+      <i class="pi pi-minus items-column" style="color: rgb(5, 92, 255)" (click)="removeItem(i)"></i>
+    </ng-container >
     <ng-container *ngIf="i == totalItems.length-1">
       <i class="pi pi-plus" style="color: rgb(5, 92, 255)" (click)="addItem()"></i>
     </ng-container>

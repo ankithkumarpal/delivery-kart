@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { DeliveryDataService } from '../delivery-data.service';
 
 @Component({
   selector: 'app-delhivery-method',
@@ -6,10 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./delhivery-method.component.css']
 })
 export class DelhiveryMethodComponent {
+  @Input() index!: number;
+
   delhiveryMethods!: any[];
 
   delhiveryItem!: any;
   itemQuantity = 0;
+  totalDeliveries! : any [];
+
+  constructor(private readonly deliveryDataService : DeliveryDataService){}
 
   ngOnInit() {
       this.delhiveryMethods = [
@@ -17,5 +23,8 @@ export class DelhiveryMethodComponent {
           { name: 'Shoes', code: 'Ele' },
       ];
 
+      this.deliveryDataService.getItems().subscribe((data : any)=>{
+        this.totalDeliveries = data;
+      })
   }
 }
