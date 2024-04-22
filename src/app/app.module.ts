@@ -11,29 +11,32 @@ BrowserAnimationsModule
 }
 from
 '@angular/platform-browser/animations';
-import { UPXMethodComponent } from './upxmethod/upxmethod.component';
-import { DelhiveryMethodComponent } from './delhivery-method/delhivery-method.component';
 import { FormsModule } from '@angular/forms';
-import { Button, ButtonModule } from 'primeng/button';
-import { ItemsComponent } from './items/items.component';
+import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
+import { IPLModule } from './ipl/ipl.module';
+import { DeliveryModule } from './delivery/delivery.module';
+import { CommonModule } from '@angular/common';
+import { commonComponentModule } from './Common/common-component.module';
+import { SearchBoxComponent } from './Common/search-box/search-box.component';
+
 
 @NgModule({
   declarations: [
-    AppComponent,
-    UPXMethodComponent,
-    DelhiveryMethodComponent,
-    ItemsComponent
+    AppComponent
   ],
   imports: [
-    BrowserModule,
+    CommonModule,
     AppRoutingModule,
     DropdownModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
     FormsModule,
     ButtonModule,
-    InputTextModule
+    InputTextModule,
+    IPLModule,
+    DeliveryModule,
+    commonComponentModule
   ],
   providers: [],
   bootstrap: [AppComponent]

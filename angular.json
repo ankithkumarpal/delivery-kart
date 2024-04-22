@@ -62,10 +62,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "shipping-kart:build:production"
+              "buildTarget": "shipping-kart:build:production"
             },
             "development": {
-              "browserTarget": "shipping-kart:build:development"
+              "buildTarget": "shipping-kart:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -73,7 +73,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "shipping-kart:build"
+            "buildTarget": "shipping-kart:build"
           }
         },
         "test": {
