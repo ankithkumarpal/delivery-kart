@@ -1,7 +1,10 @@
 
-  <p-table [value]="products" styleClass="p-datatable-gridlines" [tableStyle]="{ 'min-width': '50rem' }">
-      <ng-template pTemplate="caption"> Header </ng-template>
-      <ng-template pTemplate="header">
+  <p-table
+     [value]="products"
+     styleClass="p-datatable-gridlines"
+     [tableStyle]="{ 'min-width': '50rem' }"
+     >
+      <ng-template pTemplate="header" >
           <tr>
               <th>Code</th>
               <th>Name</th>
@@ -17,5 +20,6 @@
               <td>{{ product.quantity }}</td>
           </tr>
       </ng-template>
-      <ng-template pTemplate="summary"> Footer </ng-template>
+      <ng-template pTemplate="summary"> <p-paginator (onPageChange)="onPageChange($event)" [first]="first" [rows]="rows" [totalRecords]="120" [rowsPerPageOptions]="[10, 20, 30]"></p-paginator> </ng-template>
   </p-table>
+

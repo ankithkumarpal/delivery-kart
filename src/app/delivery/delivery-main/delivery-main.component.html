@@ -1,0 +1,21 @@
+<div *ngFor="let delivery of totalDeliveries; let i = index">
+  <div class="shipping">
+    <div class="drop-down-remove-icon">
+      <p-dropdown [(ngModel)]="totalDeliveries[i].method"    [options]="methods" optionLabel="name" placeholder="Select Delivery method"></p-dropdown>
+      <ng-container>
+        <i class="pi pi-trash" style="color: rgb(5, 92, 255)" (click)="removeDelivery(i)"></i>
+      </ng-container>
+    </div>
+    <div *ngIf="totalDeliveries[i]?.method.name == 'UPX'">
+      <app-upxmethod [index]="i"></app-upxmethod>
+    </div>
+    <div *ngIf="totalDeliveries[i]?.method.name=== 'Dehlivery'">
+      <app-delhivery-method  [index]="i" ></app-delhivery-method>
+    </div>
+  </div>
+</div>
+
+<div class="add-delivery-btn">
+  <p-button label="Add Delivery" class="red-button" (click)="addDelivery()"></p-button>
+  <p-button label="Save" (click)="saveDelivery()"></p-button>
+</div>
