@@ -1,25 +1,20 @@
 
   <p-table
-     [value]="products"
+     [value]="filteredData"
      styleClass="p-datatable-gridlines"
      [tableStyle]="{ 'min-width': '50rem' }"
      >
       <ng-template pTemplate="header" >
           <tr>
-              <th>Code</th>
-              <th>Name</th>
-              <th>Category</th>
-              <th>Quantity</th>
+              <th *ngFor="let column of cols">{{ column.header }}</th>
           </tr>
       </ng-template>
-      <ng-template pTemplate="body" let-product>
-          <tr>
-              <td>{{ product.code }}</td>
-              <td>{{ product.name }}</td>
-              <td>{{ product.category }}</td>
-              <td>{{ product.quantity }}</td>
-          </tr>
-      </ng-template>
-      <ng-template pTemplate="summary"> <p-paginator (onPageChange)="onPageChange($event)" [first]="first" [rows]="rows" [totalRecords]="120" [rowsPerPageOptions]="[10, 20, 30]"></p-paginator> </ng-template>
+      <ng-template pTemplate="body" let-row>
+        <tr>
+            <td *ngFor="let column of cols">{{ row[column.feild] }}</td>
+        </tr>
+    </ng-template>
+      <ng-template pTemplate="summary" >
+        <p *ngIf="filteredData?.length == 0">  No Records Found</p> </ng-template>
   </p-table>
-
+  <p-paginator (onPageChange)="onPageChange($event)" [first]="first" [rows]="rows" [totalRecords]="totalRecords" [rowsPerPageOptions]="[5, 10, 15]"></p-paginator>

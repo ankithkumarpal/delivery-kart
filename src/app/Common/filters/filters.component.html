@@ -1,5 +1,6 @@
-<p-multiSelect [options]="cities" [(ngModel)]="selectedCities" optionLabel="name" placeholder="Batting type" [style]="{'margin-right': '1rem'}"></p-multiSelect>
-<p-multiSelect [options]="cities" [(ngModel)]="selectedCities" optionLabel="name" placeholder="Batting type" [style]="{'margin-right': '1rem'}"></p-multiSelect>
-<p-multiSelect [options]="cities" [(ngModel)]="selectedCities" optionLabel="name" placeholder="Batting type" [style]="{'margin-right': '1rem'}"></p-multiSelect>
-<p-multiSelect [options]="cities" [(ngModel)]="selectedCities" optionLabel="name" placeholder="Batting type" [style]="{'margin-right': '1rem'}"></p-multiSelect>
-
+<p-multiSelect [options]="playersOptions" [(ngModel)]="selectedPlayers" optionLabel="name" optionValue="name" placeholder="Name" [style]="{'margin-right': '1rem'}"></p-multiSelect>
+<p-multiSelect [options]="battingTypeOptions" [(ngModel)]="selectedBattingType" optionLabel="name" optionValue="name" placeholder="Batting Type" [style]="{'margin-right': '1rem'}"></p-multiSelect>
+<p-multiSelect [options]="bowlingStyleOptions" [(ngModel)]="selectedBowlingType" optionLabel="name" optionValue="name" placeholder="Bowling Style" [style]="{'margin-right': '1rem'}"></p-multiSelect>
+<p-multiSelect [options]="totalWicketsOptions" [(ngModel)]="selectedTotalWickets" optionLabel="name" optionValue="name" placeholder="Total Wickets" [style]="{'margin-right': '1rem'}"></p-multiSelect>
+<p-button label="Apply" class="red-button ms-2" [style]="{'margin-right': '1rem'}" (click)="applyFilter()"></p-button>
+<p-button label="Clear" class="red-button me-2" (click)="clearFilter()"></p-button>

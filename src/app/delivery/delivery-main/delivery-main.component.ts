@@ -46,5 +46,4 @@ export class DeliveryMainComponent {
       this.totalDeliveries = data;
     });
   }
-
 }

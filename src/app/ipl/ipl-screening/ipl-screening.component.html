@@ -4,10 +4,10 @@
     <app-search-box></app-search-box>
   </div>
   <div class="filters">
-    <app-filters></app-filters>
+    <app-filters (filters) = "applyFilter($event)"></app-filters>
   </div>
   <div class="content">
-    <app-table></app-table>
+    <app-table [filteredData]="filteredData" [totalRecords]="totalRecords" [cols]="cols" (pagination)="onPageChange($event)"></app-table>
   </div>
 </div>
 
